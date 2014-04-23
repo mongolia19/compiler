@@ -1,0 +1,22 @@
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\bin\Debug\COMPLIER.exe
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\bin\Debug\COMPLIER.pdb
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csprojResolveAssemblyReference.cache
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\obj\Debug\COMPLIER.exe
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\obj\Debug\COMPLIER.pdb
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\obj\Debug\COMPLIER.MainForm.resources
+C:\Users\Me_Android\Documents\SharpDevelop Projects\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csproj.GenerateResource.Cache
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\bin\Debug\COMPLIER.exe
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\bin\Debug\COMPLIER.pdb
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.MainForm.resources
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.exe
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.pdb
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\bin\Debug\COMPLIER.exe
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\bin\Debug\COMPLIER.pdb
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.MainForm.resources
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.exe
+C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.pdb
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csprojResolveAssemblyReference.cache
+F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csproj.GenerateResource.Cache
