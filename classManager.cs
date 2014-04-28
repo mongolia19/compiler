@@ -16,7 +16,7 @@ namespace COMPLIER
             class_n_obj_list = new ArrayList();
 
         }
-        public String get_mid_code()
+        public String get_mid_code()/////mid code is the push pop stuffs
         {
             return mid_code_output;
         }
@@ -84,7 +84,7 @@ namespace COMPLIER
             class_n_obj_list.Add(new_class);
             return src.Substring(class_end+1);
         }
-        public String ProcessObj(String src) 
+        public String ProcessObj(String src) //////cut the string to the first ";" than search the class and alloc for the object 
         {
             scan_prob = 0;
             int first_blank = src.IndexOf(' ');//get the class name the the first posiution of class name
