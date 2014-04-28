@@ -29,7 +29,7 @@ namespace COMPLIER
        static ArrayList var_address_list;
        public static bool IsCommand(String sentence)
        {
-           if (sentence.Equals(jbz) | sentence.Equals(ret) | sentence.Equals(push) | sentence.Equals(pop) | sentence.Equals(add) | sentence.Equals(sub) | sentence.Equals(mult) | sentence.Equals(and) | sentence.Equals(or) | sentence.Equals(call) | sentence.Equals(outprint) | sentence.Equals(readin) | sentence.Equals(jump) | sentence.Equals(label) | sentence.Equals("shut"))
+           if (sentence.Equals(jbz)||sentence.Equals(ret)||sentence.Equals(push)||sentence.Equals(pop)||sentence.Equals(add)||sentence.Equals(sub) || sentence.Equals(mult) || sentence.Equals(and) || sentence.Equals(or) || sentence.Equals(call) || sentence.Equals(outprint) || sentence.Equals(readin) || sentence.Equals(jump) || sentence.Equals(label) || sentence.Equals("shut"))
            {
                return true;
            }

@@ -127,10 +127,10 @@ namespace COMPLIER
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
-            //my_vm = new TinyVM(50, 50, 50, 30, 0, 50);
-            //string[] asm_test_file = read_vm_asm_file("d:\\TestIf.vmasm");
-            //asm_test_file=vm_translator.translate(asm_test_file);
-            //my_vm.load_asm_file(asm_test_file);
+            my_vm = new TinyVM(50, 50, 50, 30, 0, 50);
+            string[] asm_test_file = read_vm_asm_file("d:\\TestIf.vmasm");
+            asm_test_file=vm_translator.translate(asm_test_file);
+            my_vm.load_asm_file(asm_test_file);
             my_classManager = new classManager();
 		}
 

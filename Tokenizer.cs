@@ -135,7 +135,7 @@ namespace COMPLIER
                 pop_statement = statement.Substring(0, statement.IndexOf("=") -0);
                 statement = statement.Substring(statement.IndexOf("=") + 1);
                 WriteCodeWithoutSpace(statement);
-                VM_Code += "pop " + pop_statement+"\n";
+                VM_Code += "pop " + pop_statement + "\r\n";
                 return "finish one statement";
             }
             else 
@@ -181,9 +181,9 @@ namespace COMPLIER
             string if_branch = input_src.Substring(if_start, if_end - if_start + 1);
            // string else_branch = input_src.Substring(if_end + 7, else_end - if_end - 7 + 1);
             WriteIfCond(cond);
-            VM_Code += "jbz L1" + "\n";
+            VM_Code += "jbz L1" + "\r\n";
             Deal_one_branch(if_branch);
-            VM_Code += "label L1" + "\n";
+            VM_Code += "label L1" + "\r\n";
             //Deal_one_branch(else_branch);
             //VM_Code += "label L2" + "\n";
             return "success";
@@ -381,13 +381,13 @@ namespace COMPLIER
 
             if (IsExp( token_list[i])&(i==token_list.GetLength(0)-1))/////at the end must be a variable
             {
-                VM_Code += "push "+Convert.ToString(token_list[i])+"\n";
+                VM_Code += "push " + Convert.ToString(token_list[i]) + "\r\n";
             }
             if (i < token_list.GetLength(0) - 1)
             {
                 if (IsNumAndEnCh(token_list[i]) & (!token_list[i + 1].Equals("("))) /////not at the end and the next token is not a "("
                 {
-                    VM_Code += "push " + Convert.ToString(token_list[i]) + "\n";
+                    VM_Code += "push " + Convert.ToString(token_list[i]) + "\r\n";
                 }
             }
             if (IsOp(token_list[i]))
@@ -418,36 +418,36 @@ namespace COMPLIER
                  
                  if (temp_op.Equals("+"))
                  {
-                     VM_Code += "ADD" + "\n";
+                     VM_Code += "ADD" + "\r\n";
                  }
                  else
                  {
                      if (temp_op.Equals("-"))
                      {
-                         VM_Code += "SUB" + "\n";
+                         VM_Code += "SUB" + "\r\n";
                      }
                      else
                      {
                          if (temp_op.Equals("*"))
                          {
-                             VM_Code += "MULT" + "\n";
+                             VM_Code += "MULT" + "\r\n";
                          }
                          else
                          {
                              if (temp_op.Equals("&"))
                              {
-                                 VM_Code += "AND" + "\n";
+                                 VM_Code += "AND" + "\r\n";
                              }
                              else
                              {
                                  if (temp_op.Equals("|"))
                                  {
-                                     VM_Code += "OR" + "\n";
+                                     VM_Code += "OR" + "\r\n";
                                  }
                                  else 
                                  {
 
-                                     VM_Code += temp_op+"\n";
+                                     VM_Code += temp_op + "\r\n";
                                  }
                              }
                          }
