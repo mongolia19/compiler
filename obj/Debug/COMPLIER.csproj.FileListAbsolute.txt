@@ -20,3 +20,11 @@ C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.exe
 C:\Users\MeAndroid\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.pdb
 F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csprojResolveAssemblyReference.cache
 F:\Users\Android\Desktop\COMPLIER\COMPLIER\obj\Debug\COMPLIER.csproj.GenerateResource.Cache
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\COMPLIER.exe
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\COMPLIER.pdb
+D:\Users\MeAndroid\Documents\GitHub\compiler\bin\Debug\COMPLIER.exe
+D:\Users\MeAndroid\Documents\GitHub\compiler\bin\Debug\COMPLIER.pdb
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\COMPLIER.MainForm.resources
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\GenerateResource.read.1.tlog
+D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\GenerateResource.write.1.tlog

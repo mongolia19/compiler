@@ -6,7 +6,11 @@ using System.Collections;
 
 namespace COMPLIER
 {
-    class classManager
+    /// <summary>
+    /// try new ways to record a class or a object :a string for a class or an object
+    /// eg. name1_type1_name2_type2_..._...
+    /// </summary>
+    class classManager//////////////
     {
          static String mid_code_output;
         ArrayList class_n_obj_list;
