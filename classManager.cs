@@ -12,9 +12,30 @@ namespace COMPLIER
     /// </summary>
     class classManager//////////////
     {
+        const String VMINT = "vmint";
+        const String CLASS = "class";
+
          static String mid_code_output;
         ArrayList class_n_obj_list;
+
         int scan_prob;
+        //public ArrayList ScanForAllVarsAndClassesAndObjs(String RawCodeText) 
+        //{
+        //    class_n_obj_list = new ArrayList();
+        //    String [] statements=RawCodeText.Split(';');
+        //    for (int i = 0; i < statements.GetLength(0); i++)
+        //    {
+        //        if (statements[i].Contains(VMINT))
+        //        {
+        //            class_n_obj_list.Add(new VarAndClass(statements[i].Replace(VMINT + " ", ""), false));
+        //        }
+        //        else if(statements[i].Contains(CLASS))
+        //        {
+                    
+                
+        //        }
+        //    }
+        //}
         public classManager() 
         {
             class_n_obj_list = new ArrayList();

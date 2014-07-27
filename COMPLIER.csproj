@@ -61,6 +61,7 @@
     <Compile Include="STR_PROC.cs" />
     <Compile Include="TinyVM.cs" />
     <Compile Include="Tokenizer.cs" />
+    <Compile Include="VarAndClass.cs" />
     <Compile Include="vm_translator.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -25,6 +25,7 @@ namespace COMPLIER
         ArrayList local_ram;//hold local vars
         ArrayList this_ram;//hold  object
         ArrayList arg_ram;//hold the args pass to the functions
+        ArrayList VariableList;
         TinyVM my_vm;
         classManager my_classManager;
         String temp_src;
