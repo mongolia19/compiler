@@ -28,3 +28,10 @@ D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\ResolveAssemblyReference.
 D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\COMPLIER.MainForm.resources
 D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\GenerateResource.read.1.tlog
 D:\Users\MeAndroid\Documents\GitHub\compiler\obj\Debug\GenerateResource.write.1.tlog
+D:\Bao_Yujian\git_sycn\compiler\obj\Debug\COMPLIER.exe
+D:\Bao_Yujian\git_sycn\compiler\obj\Debug\COMPLIER.pdb
+D:\Bao_Yujian\git_sycn\compiler\bin\Debug\COMPLIER.exe
+D:\Bao_Yujian\git_sycn\compiler\bin\Debug\COMPLIER.pdb
+D:\Bao_Yujian\git_sycn\compiler\obj\Debug\COMPLIER.csprojResolveAssemblyReference.cache
+D:\Bao_Yujian\git_sycn\compiler\obj\Debug\COMPLIER.MainForm.resources
+D:\Bao_Yujian\git_sycn\compiler\obj\Debug\COMPLIER.csproj.GenerateResource.Cache

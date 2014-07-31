@@ -55,6 +55,7 @@ namespace COMPLIER
             scan_prob += rows;
         
         }
+
         public String ProcessFirstClass(String src,int startAddr)
         {
             scan_prob = 0;
@@ -72,17 +73,22 @@ namespace COMPLIER
             
             String[] mumber_array = class_body.Split(';');
 
-
+            int MumberOffset = 2;
             //process the mumbers
             for (int i = 0; i < mumber_array.GetLength(0); i++)
             {
+               
                 if (!mumber_array[i].Equals(""))
                 {
                     String temp_str = mumber_array[i];
                     if (temp_str.Contains("vmint "))
                     {
                         String obj_name = temp_str.Substring(6);
-                        new_class.add_a_vmint_mumber(obj_name);
+                        
+                        MumberOffset += 2;
+                        
+                        new_class.add_a_vmint_mumber(obj_name,MumberOffset);
+                        
                         alloc("vmint");
                         write2output(obj_name, 2);
                     }
@@ -92,9 +98,18 @@ namespace COMPLIER
                         String[] name_array = obj_name_n_type.Split(' ');
                         String obj_name = name_array[1];
                         String obj_type = name_array[0];
+
+                        //MumberOffset += 2;
+                        int MumberHeader = 0;
+                        MumberHeader = MumberOffset + 2;
                         int mumber_offset = searchOffSet(obj_type);
-                        classNode a_obj=SearchDefinedClass(obj_type);
+
+                        MumberOffset = MumberOffset + mumber_offset;//increase the pointer and point to next mumber
+
+                        classNode a_obj = new classNode(obj_name,obj_type);
+                         a_obj =(classNode)SearchDefinedClass(obj_type).CloneSelf();
                         a_obj.SetName(obj_name);
+                        a_obj.SetOffSet(MumberHeader);
                         new_class.add_a_mumber(a_obj);
                        
                         alloc(obj_name);
@@ -104,7 +119,7 @@ namespace COMPLIER
                 }
 
             }
-            new_class.SetOffSet(scan_prob);
+            new_class.SetOffSet(MumberOffset);
 
             class_n_obj_list.Add(new_class);
             return src.Substring(class_end+1);
@@ -143,6 +158,13 @@ namespace COMPLIER
 
             class_n_obj_list.Add(new_class);
             return src.Substring(obj_end + 1);
+        }
+        public String AccessObject(String rawString) 
+        {
+
+                String [] subStrings=rawString.Split('.');
+                int subStringNum = subStrings.GetLength(0);
+                
         }
         private classNode SearchDefinedClass(String class_type) 
         {
@@ -190,6 +212,10 @@ namespace COMPLIER
         int offset;
         String type;
         ArrayList mumber;
+        public Object CloneSelf() 
+        {
+            return this.MemberwiseClone();
+        }
 
         public classNode(String Name,int OffSet,String Type) 
         {
@@ -218,6 +244,14 @@ namespace COMPLIER
             classNode a_mumber = new classNode(Name,"vmint");
             mumber.Add(a_mumber);
             return 1;
+        }
+        public int add_a_vmint_mumber(String Name, int OffSet) 
+        {
+            classNode a_mumber = new classNode(Name, "vmint");
+            a_mumber.SetOffSet(OffSet);
+            mumber.Add(a_mumber);
+            return 1;
+        
         }
         public int add_a_mumber(String Name,String Type) 
         {
