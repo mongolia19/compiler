@@ -159,11 +159,57 @@ namespace COMPLIER
             class_n_obj_list.Add(new_class);
             return src.Substring(obj_end + 1);
         }
+
+        classNode get_off_set_mumber_from_mumbers(classNode cN,String SearchedName) //////////search mumber by name
+        {
+            if (cN!=null)
+            {
+                ArrayList mumberList = cN.GetMumberList();
+                for (int i = 0; i <mumberList.Count; i++)
+                {
+                    if (((classNode)mumberList[i]).GetName().Equals(SearchedName))
+                    {
+                        return ((classNode)mumberList[i]);
+                    }
+                }
+                return null;
+               
+            }
+            else
+            {
+                return null;
+            }
+        
+        }
         public String AccessObject(String rawString) 
         {
 
                 String [] subStrings=rawString.Split('.');
                 int subStringNum = subStrings.GetLength(0);
+                /////search first layer of an expression like xx.xx.xx in class_n_obj_list
+                classNode MatchedObject=new classNode();    
+                for (int i = 0; i < class_n_obj_list.Count; i++)
+			    {
+			          classNode temp_class = ((classNode)class_n_obj_list[i]);
+                      if (temp_class.GetName().Equals(subStrings[0]))
+                     {
+                        MatchedObject=temp_class;
+                     }     
+		   	    }
+                int total_off_set = MatchedObject.GetOffSet();
+                classNode MatchedBeingSearched = MatchedObject;
+                for (int i = 1; i < subStringNum; i++)
+                { 
+                    MatchedBeingSearched = get_off_set_mumber_from_mumbers(MatchedBeingSearched, subStrings[i]);
+                    int each_off_set = MatchedBeingSearched.GetOffSet();
+                    if (each_off_set!=-1)
+                    {
+                        total_off_set = total_off_set + each_off_set;
+
+                    }
+
+                }
+                return total_off_set.ToString();
                 
         }
         private classNode SearchDefinedClass(String class_type) 
@@ -216,7 +262,10 @@ namespace COMPLIER
         {
             return this.MemberwiseClone();
         }
-
+        public ArrayList GetMumberList() 
+        {
+            return mumber;
+        }
         public classNode(String Name,int OffSet,String Type) 
         {
             name = Name;
@@ -297,7 +346,10 @@ namespace COMPLIER
             name = Name;
         }
 
-
+        public String GetName()
+        {
+            return name;
+        }
 
         public void add_a_mumber(classNode Obj_Or_Class)
         {
