@@ -137,11 +137,23 @@ namespace COMPLIER
 
         private void button2_Click(object sender, EventArgs e)
         {
-            temp_src= my_classManager.ProcessFirstClass( textBox1.Text,0); //Tokenizer.remove_all_spaces(textBox1.Text);
-            textBox1.Text = temp_src;
-            //Tokenizer.Deal_If_branch(textBox1.Text);
-            textBox2.Text = my_classManager.get_mid_code();
-
+            if (textBox1.Text.Length > 0)
+            {
+                temp_src = my_classManager.ProcessFirstClass(textBox1.Text, 0); //Tokenizer.remove_all_spaces(textBox1.Text);
+                textBox1.Text = temp_src;
+                //Tokenizer.Deal_If_branch(textBox1.Text);
+                textBox2.Text = my_classManager.get_mid_code();
+            }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String class_mid_code = textBox2.Text;
+
+            my_classManager.SetAddressForClassNObjFromMidCode(class_mid_code);
+           String addr =my_classManager.AccessObject(textBox3.Text);
+           textBox3.Text = textBox3.Text + "\r\n" + addr;
+        }
+
 	}
 }

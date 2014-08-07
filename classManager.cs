@@ -41,6 +41,33 @@ namespace COMPLIER
             class_n_obj_list = new ArrayList();
 
         }
+        public void SetAddressForClassNObjFromMidCode(String MidCode) 
+        {
+            String[] midCodeSeg = MidCode.Split('\r');
+            for (int i = 0; i < midCodeSeg.GetLength(0); i++)
+            {
+                if (midCodeSeg[i].Length>1)
+                {
+                    midCodeSeg[i] = midCodeSeg[i].Replace("\n","");   
+                }
+             
+            }
+            for (int i = 0; i < midCodeSeg.GetLength(0); i++)
+            {
+                if (!midCodeSeg[i].Contains("blank row "))
+                {
+                    for (int j = 0; j < class_n_obj_list.Count; j++)
+                    {
+                        if (midCodeSeg[i].Equals(((classNode)class_n_obj_list[j]).GetName()))
+                        {
+                            ((classNode)class_n_obj_list[j]).SetOffSet(i);
+                        }
+                    }
+                }
+            }
+        
+        
+        }
         public String get_mid_code()/////mid code is the push pop stuffs
         {
             return mid_code_output;
