@@ -151,7 +151,8 @@ namespace COMPLIER
             String class_mid_code = textBox2.Text;
 
             my_classManager.SetAddressForClassNObjFromMidCode(class_mid_code);
-           String addr =my_classManager.AccessObject(textBox3.Text);
+            ;
+           String addr = classManager.AccessObjectFromMidCodeSegs(textBox3.Text, classManager.GetClassMidCodeInArray(class_mid_code));
            textBox3.Text = textBox3.Text + "\r\n" + addr;
         }
 

@@ -41,6 +41,23 @@ namespace COMPLIER
             class_n_obj_list = new ArrayList();
 
         }
+
+        public static String[] GetClassMidCodeInArray(String MidCode)
+        {
+            String[] midCodeSeg = MidCode.Split('\r');
+            for (int i = 0; i < midCodeSeg.GetLength(0); i++)
+            {
+                if (midCodeSeg[i].Length > 1)
+                {
+                    midCodeSeg[i] = midCodeSeg[i].Replace("\n", "");
+                }
+
+            }
+
+            return midCodeSeg;
+        
+        }
+
         public void SetAddressForClassNObjFromMidCode(String MidCode) 
         {
             String[] midCodeSeg = MidCode.Split('\r');
@@ -60,7 +77,7 @@ namespace COMPLIER
                     {
                         if (midCodeSeg[i].Equals(((classNode)class_n_obj_list[j]).GetName()))
                         {
-                            ((classNode)class_n_obj_list[j]).SetOffSet(i);
+                            ((classNode)class_n_obj_list[j]).SetOffSet(i+1);
                         }
                     }
                 }
@@ -100,7 +117,7 @@ namespace COMPLIER
             
             String[] mumber_array = class_body.Split(';');
 
-            int MumberOffset = 2;
+            int MumberOffset = 2;//////////////Maybe should be 1 ???
             //process the mumbers
             for (int i = 0; i < mumber_array.GetLength(0); i++)
             {
@@ -206,6 +223,45 @@ namespace COMPLIER
             {
                 return null;
             }
+        
+        }
+
+
+        public static int SearchNameAddrFrom(int index, String ObjName,String [] MidCode)
+        {
+            int TotalCodeLength=MidCode.GetLength(0);
+
+            if (index <= MidCode.GetLength(0) - 1)
+            {
+                for (int i = index ; i <TotalCodeLength; i++)
+                {
+                    if (MidCode[i].Equals(ObjName))
+                    {
+                        return i;
+                    }
+                }
+                return -1;
+            
+            }
+            else
+            {
+                return -1;
+            }
+            
+        
+        }
+        public static String  AccessObjectFromMidCodeSegs(String rawString, String[] midCode)
+        {
+            String[] subStrings = rawString.Split('.');
+            int subStringNum = subStrings.GetLength(0);
+
+            int Addr=0;
+            for (int i = 0; i <subStringNum; i++)
+            {
+                Addr+=SearchNameAddrFrom(0, subStrings[i], midCode);
+
+            }
+            return Addr.ToString();
         
         }
         public String AccessObject(String rawString) 
