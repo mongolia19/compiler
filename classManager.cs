@@ -117,7 +117,7 @@ namespace COMPLIER
             
             String[] mumber_array = class_body.Split(';');
 
-            int MumberOffset = 2;//////////////Maybe should be 1 ???
+            int MumberOffset = 1;//////////////Maybe should be 1 ???
             //process the mumbers
             for (int i = 0; i < mumber_array.GetLength(0); i++)
             {
@@ -131,7 +131,7 @@ namespace COMPLIER
                         
                         MumberOffset += 2;
                         
-                        new_class.add_a_vmint_mumber(obj_name,MumberOffset);
+                        new_class.add_a_vmint_mumber(obj_name,MumberOffset-1);
                         
                         alloc("vmint");
                         write2output(obj_name, 2);
@@ -143,17 +143,18 @@ namespace COMPLIER
                         String obj_name = name_array[1];
                         String obj_type = name_array[0];
 
-                        //MumberOffset += 2;
+                        classNode a_obj = new classNode(obj_name, obj_type);
+                        a_obj = (classNode)SearchDefinedClass(obj_type).CloneSelf();
+                        a_obj.SetName(obj_name);
+                        MumberOffset += 2;//pointer must increase two to new location 
+                        a_obj.SetOffSet(MumberOffset-1);
+
                         int MumberHeader = 0;
-                        MumberHeader = MumberOffset + 2;
+                        MumberHeader = MumberOffset ;
                         int mumber_offset = searchOffSet(obj_type);
 
-                        MumberOffset = MumberOffset + mumber_offset;//increase the pointer and point to next mumber
+                        MumberOffset = MumberOffset + mumber_offset-2;//increase the pointer and point to next mumber
 
-                        classNode a_obj = new classNode(obj_name,obj_type);
-                         a_obj =(classNode)SearchDefinedClass(obj_type).CloneSelf();
-                        a_obj.SetName(obj_name);
-                        a_obj.SetOffSet(MumberHeader);
                         new_class.add_a_mumber(a_obj);
                        
                         alloc(obj_name);
@@ -163,7 +164,7 @@ namespace COMPLIER
                 }
 
             }
-            new_class.SetOffSet(MumberOffset);
+            new_class.SetOffSet(MumberOffset+1);
 
             class_n_obj_list.Add(new_class);
             return src.Substring(class_end+1);
